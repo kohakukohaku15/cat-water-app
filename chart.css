@@ -1,0 +1,53 @@
+.chart-note {
+  margin: 10px 0 22px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.chart {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: end;
+  gap: 10px;
+  height: 220px;
+  padding-top: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.chart-day {
+  display: grid;
+  grid-template-rows: 20px 1fr 28px;
+  align-items: end;
+  height: 100%;
+  text-align: center;
+}
+.chart-value {
+  align-self: start;
+  color: var(--dark);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.bar-area {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+.chart-bar {
+  width: min(34px, 72%);
+  min-height: 3px;
+  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(180deg, #70c6d2, var(--blue));
+  transition: height .25s ease;
+}
+.chart-bar.zero { background: #dfe9ea; }
+.chart-date {
+  padding-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .chart { gap: 4px; height: 190px; }
+  .chart-value, .chart-date { font-size: 9px; }
+  .chart-bar { width: 70%; }
+}

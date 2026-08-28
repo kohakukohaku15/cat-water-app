@@ -1,0 +1,47 @@
+.setup-message { border-color: #e8c980; background: #fff9e9; }
+.setup-message h2 { color: #805f15; }
+.setup-message p { margin-bottom: 0; color: #705f38; line-height: 1.7; }
+.setup-message code { padding: 2px 6px; border-radius: 5px; background: #f5ebcf; }
+.auth-card { max-width: 520px; margin-right: auto; margin-left: auto; }
+.auth-heading { display: flex; align-items: center; gap: 12px; }
+.auth-heading > span { font-size: 30px; }
+.auth-heading h2 { margin: 5px 0 0; }
+.auth-description { color: var(--muted); font-size: 13px; line-height: 1.7; }
+#auth-form { display: grid; gap: 15px; }
+.auth-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.auth-buttons button { margin-top: 4px; }
+.secondary-button { color: var(--dark) !important; border: 1px solid var(--blue) !important; background: #fff !important; box-shadow: none !important; }
+.secondary-button:hover { background: var(--pale) !important; }
+.auth-message { min-height: 20px; margin: 2px 0 0; font-size: 13px; text-align: center; }
+.user-bar { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin: -8px 0 16px; color: var(--muted); font-size: 12px; }
+.user-bar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.user-bar button { flex: none; border: 1px solid var(--line); border-radius: 9px; padding: 8px 12px; color: #526268; background: #fff; font-size: 12px; font-weight: 700; cursor: pointer; }
+.user-bar button:hover { background: var(--pale); }
+button:disabled { opacity: .55; cursor: wait; }
+@media (max-width: 560px) {
+  .auth-buttons { grid-template-columns: 1fr; }
+  .user-bar { align-items: flex-end; flex-direction: column; gap: 7px; }
+}
+
+/* iPhoneは16px未満の入力欄をタップすると自動拡大するため、全入力欄を16pxにします。 */
+input {
+  min-width: 0;
+  max-width: 100%;
+  font-size: 16px;
+}
+
+#auth-form,
+#app-section,
+.fields > label,
+.record-item,
+.chart-day {
+  min-width: 0;
+}
+
+@media (max-width: 560px) {
+  body { overflow-x: hidden; }
+  .container { max-width: calc(100vw - 22px); }
+  .card, .average, .chart { max-width: 100%; }
+  li { grid-template-columns: minmax(0, 1fr) auto auto; }
+  li > span:first-child { overflow-wrap: anywhere; }
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>琥珀の健康きろく</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chart.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <div class="cat">🐱</div>
+            <div><small>猫又になるために！！</small>
+                <h1>琥珀の健康きろく</h1>
+                <p>毎日のお水の量を、かんたんに記録しましょう。</p>
+            </div>
+        </header>
+        <section id="setup-message" class="card setup-message" hidden>
+            <h2>Supabaseの設定が必要です</h2>
+            <p><code>config.js</code> にプロジェクトURLとPublishable keyを設定してください。</p>
+        </section>
+        <section id="auth-section" class="card auth-card" hidden>
+            <div class="auth-heading"><span aria-hidden="true">🔐</span><div><small>MEMBER</small><h2>ログイン</h2></div></div>
+            <p class="auth-description">記録を見るには、ログインまたは新規登録してください。</p>
+            <form id="auth-form">
+                <label>メールアドレス<input type="email" id="email" autocomplete="email" placeholder="cat@example.com" required></label>
+                <label>パスワード<input type="password" id="password" autocomplete="current-password" minlength="6" placeholder="6文字以上" required></label>
+                <div class="auth-buttons">
+                    <button type="submit" id="login-button">ログイン</button>
+                    <button type="button" id="signup-button" class="secondary-button">新規登録</button>
+                </div>
+                <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+        <div id="app-section" hidden>
+            <div class="user-bar"><span id="user-email"></span><button type="button" id="logout-button">ログアウト</button></div>
+        <section class="card">
+            <h2>今日の記録</h2>
+            <form id="water-form">
+                <div class="fields"><label>日付<input type="date" id="date" required></label><label>飲水量（ml）<input
+                            type="number" id="amount" min="1" step="1" placeholder="例：180" required></label></div>
+                <button type="submit">記録を保存</button>
+                <p id="message" role="status"></p>
+            </form>
+        </section>
+        <section class="average">これまでの平均 <strong id="average">0</strong> ml 💧</section>
+        <section class="card chart-card" aria-labelledby="chart-title">
+            <div class="title">
+                <div><small>LAST 7 DAYS</small><h2 id="chart-title">過去7日間の飲水量</h2></div>
+            </div>
+            <p class="chart-note">同じ日の記録は合計して表示します。</p>
+            <div id="water-chart" class="chart" aria-label="過去7日間の飲水量の棒グラフ"></div>
+        </section>
+        <section class="card">
+            <div class="title">
+                <div><small>HISTORY</small>
+                    <h2>過去の記録</h2>
+                </div><span id="count">0件</span>
+            </div>
+            <div id="empty" class="empty">🥛<p>まだ記録がありません</p><small>上のフォームから最初の記録を保存してみましょう。</small></div>
+            <ul id="record-list"></ul>
+        </section>
+        </div>
+    </main>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
