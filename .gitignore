@@ -1,0 +1,32 @@
+# Environment variables and local settings
+.env
+.env.*
+!.env.example
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# Files commonly used for credentials or secrets
+credentials.json
+credentials.*.json
+service-account*.json
+service_account*.json
+secrets.json
+secret.json
+*.secret
+
+# Editor, OS and temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+node_modules/
+
